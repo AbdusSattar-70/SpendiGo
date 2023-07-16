@@ -1,10 +1,10 @@
-<%= form_with(model: user) do |form| %>
-  <% if user.errors.any? %>
+<%= form_with(model: deal) do |form| %>
+  <% if deal.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <h2><%= pluralize(deal.errors.count, "error") %> prohibited this deal from being saved:</h2>
 
       <ul>
-        <% user.errors.each do |error| %>
+        <% deal.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
@@ -17,8 +17,8 @@
   </div>
 
   <div>
-    <%= form.label :photo, style: "display: block" %>
-    <%= form.text_field :photo %>
+    <%= form.label :amount, style: "display: block" %>
+    <%= form.text_field :amount %>
   </div>
 
   <div>
