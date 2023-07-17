@@ -1,0 +1,17 @@
+<div>
+  <div>
+      <div>
+          <% if current_user  %>
+            <h1>Welcome, <span><%= current_user.name %>!</span><h1>
+
+              <a href="https://github.com/AbdusSattar-70" target="_blank">Abdus Sattar </a>
+
+          <% else  %>
+            <h1>Wecome To SpendiGo!<h1>
+              <%= link_to "Sign in", new_user_session_path%>
+                <%= link_to "Sign up", new_user_registration_path%>
+            </div>
+          <% end %>
+      </div>
+  </div>
+</div>

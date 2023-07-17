@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+  root 'splash#index'
   devise_for :users
   resources :categories do
-  resources :deals
+    resources :deals
   end
 end

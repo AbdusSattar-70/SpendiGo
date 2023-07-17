@@ -4,5 +4,4 @@ class Category < ApplicationRecord
 
   validates :name, :icon, presence: true
   has_one_attached :icon, dependent: :destroy
-
 end
