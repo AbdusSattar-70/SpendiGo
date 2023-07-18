@@ -1,29 +1,33 @@
-<h2>Sign up</h2>
-
+<section class="devise-login-container">
+  <nav>
+      <%= link_to raw('<i class="fa-solid fa-arrow-left-long"></i>'), root_path %>
+       <h2>REGISTER</h2>
+       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+       <%= f.submit "Next", class:"login-nav" %>
+      <% end %>
+  </nav>
+  <div>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  </div>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+  <div class="input-field-container">
+     <div class="upload-container">
+       <i class="fa-solid fa-2xl fa-circle-user" style="color: #7e7575;"></i>
+        <span class="upload-placeholder">Upload Picture</span>
+       <%= f.file_field :photo, accept: "image/*", class:"user-photo" %>
+     </div>
+    <%= f.label :name, style:"display:none"%>
+    <%= f.text_field :name, autofocus: true, placeholder:'Name' %>
+    <%= f.label :email, style:"display:none" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder:'Email' %>
+    <%= f.label :password, style:"display:none"%>
+    <%= f.password_field :password, autocomplete: "new-password",placeholder:"New Password" %>
+    <%= f.label :password_confirmation, style:"display:none"%>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password",placeholder:"Password Confirmation" %>
+    <%= f.submit "Sign up", style:"display:none"%>
   </div>
 <% end %>
+<section>
 
-<%= render "devise/shared/links" %>
