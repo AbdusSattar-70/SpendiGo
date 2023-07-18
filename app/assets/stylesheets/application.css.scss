@@ -1,0 +1,226 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
+@import "font-awesome";
+
+:root {
+  --main-color: #3778c2;
+  --second-color: #5fb523;
+  --text-color: #434b54;
+  --bg-color: #dfd9e8f0;
+}
+
+/* .home or splash page style start */
+
+.home-section,
+.devise-login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding-top: 10%;
+}
+
+.splash-home {
+  padding-top: 10%;
+}
+
+.action-div {
+display: flex;
+flex-direction: column;
+width: 96vw;
+}
+
+.login,
+.updateBtn {
+  background-color: var(--main-color);
+  color: white;
+  font-weight: bold;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.login-nav {
+  background-color: var(--main-color);
+  color: #ffffff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.signup {
+  font-weight: bold;
+  color: var(--text-color);
+  padding: 20px;
+}
+
+/* home or splash page style end */
+/* devise session new or login page style start */
+
+.devise-login-container {
+  padding-top: 0;
+  justify-content: flex-start;
+
+}
+
+.devise-login-container nav,
+.home-section nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--main-color);
+  color: #ffffff;
+  width: 100vw;
+  padding: 2%;
+}
+
+.welcome {
+  margin-top: 10%;
+}
+
+.fa-arrow-left-long,
+.fa-bars,
+.fa-xmark {
+  cursor: pointer;
+  color: white;
+}
+
+.input-field-container {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0 0 0;
+  gap: 2px;
+}
+
+.field_with_errors {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0 0 0;
+  gap: 2px;
+}
+
+.input-field-container ::placeholder {
+  padding: 5px;
+  color: var(--text-color);
+}
+
+.input-field-container input {
+  padding: 8px;
+  border: none;
+  outline: none;
+  height: 10vh;
+}
+
+.forgot-password {
+  margin-top: 35px;
+}
+
+/* user photo upload related  */
+.upload-container {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  padding-left: 10px ;
+  background-color: #fff;
+}
+
+.user-photo::-webkit-file-upload-button {
+  visibility: hidden;
+  padding: 10px;
+}
+
+.user-photo {
+  width: 60%;
+  padding: 0;
+  cursor: pointer;
+}
+
+.upload-placeholder {
+  padding-left: 5px;
+}
+
+ .current_user {
+  padding-top: 0;
+}
+
+/* mobile menu start */
+.menu_container {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: var(--main-color);
+  color: #fff;
+  transition: left 0.3s ease;
+}
+
+.menu_container.active {
+  left: 0;
+}
+
+.fa-xmark {
+  position: fixed;
+  left: 203px;
+  padding: 10px;
+}
+
+.avatar_circle {
+  border-radius: 50%;
+  width: 170px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.menu_list {
+  padding-top: 25px;
+}
+
+.menu_item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  text-align: left;
+}
+
+.menu_item i {
+  display: inline-block;
+  width: 20px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.menu_item span {
+  width: 210px;
+  display: flex;
+  border-bottom: 1px solid white;
+  padding-bottom: 10px;
+}
+
+.menu_item a {
+  color: #fff;
+}
+
+/* mobile menu end */
+
+/* Edit/Delete user account */
+.deleteBtn {
+  width: 100%;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  padding: 15px;
+  cursor: pointer;
+}
