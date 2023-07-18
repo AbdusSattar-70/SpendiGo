@@ -12,16 +12,14 @@
   <% end %>
 
   <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div>
-    <%= form.label :icon, style: "display: block" %>
-    <%= form.text_field :icon %>
-  </div>
-
-  <div>
+    <%= form.hidden_field :author_id, value: current_user.id %>
+    <%= form.label :name, style:"display:none" %>
+    <%= form.text_field :name, placeholder:"Enter Category Name" %>
+  <div class="upload-container">
+       <i class="fa-solid fa-2xl fa-circle-user" style="color: #7e7575;"></i>
+        <span class="upload-placeholder">Upload Icon</span>
+       <%= form.file_field :icon, accept: "image/*", class:"user-photo" %>
     <%= form.submit %>
   </div>
+</div>
 <% end %>

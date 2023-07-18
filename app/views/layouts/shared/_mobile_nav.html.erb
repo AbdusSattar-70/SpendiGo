@@ -1,0 +1,50 @@
+<% if user_signed_in? %>
+<div class="menu_container">
+  <i class="fa-solid fa-xmark" style="color: #fff; display: none;" onclick="toggleMenu()"></i>
+  <div class="profile_info">
+    <div class="profile-img">
+      <% if current_user.photo.present? %>
+        <%= image_tag current_user.photo, class: "avatar_circle" %>
+      <% else %>
+        <i class="fa-solid fa-2xl fa-circle-user avatar_circle" style="color: #7e7575;"></i>
+      <% end %>
+    </div>
+    <p><%= current_user.name %></p>
+  </div>
+  <ul class="menu_list">
+  <li class="menu_item"><i class="fa-solid fa-gear fa-spin" style="color: #fff;"></i><a href="/users/edit"><span>Account Settings</span></a></li>
+  <li class="menu_item"><i class="fa-solid fa-pen-nib" style="color: #ffffff;"></i><a href="#"><span>Merchant Finder</span></a></li>
+  <li class="menu_item"><i class="fa-solid fa-pen-nib" style="color: #ffffff;"></i><a href="#"><span>Claim Promo</span></a></li>
+  <li class="menu_item"><i class="fa-solid fa-pen-nib" style="color: #ffffff;"></i><a href="#"><span>Share Promo</span></a></li>
+  <li class="menu_item"><i class="fa-solid fa-rotate fa-spin" style="color: #ffffff;"></i><a href="/categories"><span>Category</span></a></li>
+  <li class="menu_item">
+    <i class="fa-solid fa-sign-out"></i><%= link_to "Sign Out", destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: 'Are you sure to logout?' } %>
+  </li>
+</ul>
+
+</div>
+<% end %>
+
+<script>
+function toggleMenu() {
+  const menuContainer = document.querySelector('.menu_container');
+  const closeBtn = document.querySelector('.menu_container .fa-xmark');
+  const openBtn = document.querySelector('.menu_container .fa-bars');
+
+  menuContainer.classList.toggle('active');
+  closeBtn.style.display = closeBtn.style.display === 'none' ? 'inline-block' : 'none';
+  openBtn.style.display = openBtn.style.display === 'none' ? 'inline-block' : 'none';
+}
+
+function closeMenu() {
+  const menuContainer = document.querySelector('.menu_container');
+  const closeBtn = document.querySelector('.menu_container .fa-xmark');
+  const openBtn = document.querySelector('.menu_container .fa-bars');
+
+  if (menuContainer.classList.contains('active')) {
+    menuContainer.classList.remove('active');
+    closeBtn.style.display = 'none';
+    openBtn.style.display = 'inline-block';
+  }
+}
+</script>

@@ -1,12 +1,17 @@
 <div id="<%= dom_id category %>">
+<% if can? :manage, @category %>
   <p>
     <strong>Name:</strong>
     <%= category.name %>
   </p>
 
-  <p>
+    <p>
     <strong>Icon:</strong>
-    <%= category.icon %>
+    <% if category.icon.attached? %>
+      <%= image_tag category.icon, class: "category-icon" %>
+    <% else %>
+      <i class="fa-solid fa-2xl fa-circle-user" style="color: #7e7575;"></i>
+    <% end %>
   </p>
-
+<% end %>
 </div>
