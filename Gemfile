@@ -74,6 +74,7 @@ end
 gem 'cancancan'
 gem 'devise'
 gem 'font-awesome-sass'
+gem 'pry'
 gem 'rails-controller-testing'
 gem 'rspec-rails'
 gem 'rubocop', '>= 1.0', '< 2.0'
