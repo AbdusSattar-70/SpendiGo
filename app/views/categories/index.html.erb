@@ -1,14 +1,50 @@
-<p style="color: green"><%= notice %></p>
+<div class="added_button">
+  <section class="home-section category_list">
+    <div>
+      <nav>
+        <%= link_to raw('<i class="fa-solid fa-arrow-left-long"></i>'), root_path %>
+        <h1>PAYMENT TYPE</h1>
+        <i class="fa-solid fa-magnifying-glass fa-shake fa-sm" style="color: #fff;"></i>
+      </nav>
+      <div>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+      </div>
+      <div class="user_total_payment category_details">
+      <h3>Sum Of All Transaction: </h3>
+      <h3> $<%= @total_payment%></h3>
 
-<h1>Categories</h1>
-
-<div id="categories">
-  <% @categories.each do |category| %>
-    <%= render category %>
-    <p>
-      <%= link_to "Show this category", category %>
-    </p>
+      </div>
+      <div id="categories">
+        <% @categories.each do |category| %>
+          <% if can? :manage, category %>
+            <%= link_to category do %>
+              <div class="category_details">
+                <% if category.icon.attached? %>
+                  <div class="display_flex">
+                    <%= image_tag category.icon, class: "category_icon_manage" %>
+                  <% else %>
+                    <i class="fa-solid fa-2xl fa-circle-user" style="color: #7e7575;"></i>
+                  <% end %>
+                  <div class="name_date">
+                    <%= category.name.capitalize %>
+                    <p><%= category.created_at.strftime("%d %b %Y") %></p>
+                  </div>
+                </div>
+                <p>Total Payment: $<%= @category_totals[category.id] %></p>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </section>
+  <% if current_user.categories.empty? %>
+    <h2 class="no_payment">You haven't added any Payment Type yet!</h2>
   <% end %>
 </div>
-
-<%= link_to "New category", new_category_path %>
+<section>
+  <button class="editBtn margin_top">
+    <%= link_to "Add Payment", new_category_path, class: "outline_border" %>
+  <button>
+</section>
