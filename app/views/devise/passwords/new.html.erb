@@ -2,9 +2,7 @@
  <nav>
       <%= link_to raw('<i class="fa-solid fa-arrow-left-long"></i>'), root_path %>
        <h2>LOG IN</h2>
-       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-       <%= f.submit "Log in", class:"login-nav" %>
-      <% end %>
+       <h4>Log in</h4>
   </nav>
   <div>
   <p class="notice"><%= notice %></p>
