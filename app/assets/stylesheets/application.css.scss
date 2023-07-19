@@ -21,6 +21,9 @@ body {
 }
 
 /* .home or splash page style start */
+a {
+  color: var(--text-color);
+}
 
 .notice,
 .alert {
@@ -219,7 +222,7 @@ body {
 /* Edit/Delete user account */
 .deleteBtn {
   width: 100%;
-  background-color: red;
+  background-color: var(--main-color);
   color: white;
   border: none;
   outline: none;
@@ -277,6 +280,7 @@ body {
   background-color: white;
   padding: 10px;
   margin: 6px 20px 2px 6px;
+  box-shadow: 4px 4px 6px #12121163;
 }
 
 .category_icon_manage {
@@ -377,4 +381,23 @@ body {
 #deal_category_id option {
   display: flex;
   flex-direction: column;
+}
+
+.deleteDeal {
+  cursor: pointer;
+  background-color: var(--second-color);
+  color: white;
+  outline: none;
+  border: none;
+}
+
+.display_flex_deal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+.btn_destroy {
+  background-color: var(--main-color);
 }
