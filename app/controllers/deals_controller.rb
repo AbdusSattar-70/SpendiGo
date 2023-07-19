@@ -1,15 +1,12 @@
 class DealsController < ApplicationController
   before_action :authenticate_user!
 
-  def index; end
-
-  def show
-    @deal = Deal.find(params[:id])
-    @category = @deal.categories.first # Assuming a deal has one category, adjust accordingly
-
-    # Fetch all deals that belong to the same category as the current deal
-    @user_deals = @category.deals.where(author_id: current_user.id)
+  def index
+    @category = Category.find(params[:category_id])
+    @user_deals = @category.deals.where(author_id: current_user.id).order(created_at: :desc)
   end
+
+  def show; end
 
   def new
     @deal = Deal.new
@@ -30,7 +27,12 @@ class DealsController < ApplicationController
     end
   end
 
-  def edit; end
+  def destroy
+    @deal = Deal.find(params[:id])
+    @deal.destroy
+    flash[:notice] = 'Payment removed successfully'
+    redirect_to category_deals_path
+  end
 
   private
 

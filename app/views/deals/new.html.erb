@@ -1,4 +1,5 @@
   <section class="home-section new_deal">
+  <div class="display_flex_deal">
     <nav>
      <i class="fa-solid fa-shake fa-bars menu_toggle" onclick="toggleMenu()"></i>
         <h1>CREATE PAYMENT</h1>
@@ -22,6 +23,7 @@
       </ul>
     </div>
   <% end %>
+  <div class="display_flex_deal">
   <div class="input-field-container">
     <%= form.hidden_field :author_id, value: current_user.id %>
     <% form.label :category_id %>
@@ -34,5 +36,7 @@
     <button  class="createCategoryBtn">
    <%= form.submit "Confirm Payment", class:"outline_border"%>
    </button>
+   </div>
+   </div>
 <% end %>
 </section>
