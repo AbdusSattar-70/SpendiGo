@@ -7,6 +7,10 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 @import "font-awesome";
 
 :root {
@@ -17,6 +21,12 @@
 }
 
 /* .home or splash page style start */
+
+.notice,
+.alert {
+  background-color: var(--second-color);
+  color: white;
+}
 
 .home-section,
 .devise-login-container {
@@ -42,20 +52,11 @@
   width: 96vw;
 }
 
-.login,
-.updateBtn {
+.login {
   background-color: var(--main-color);
   color: white;
   font-weight: bold;
   padding: 15px;
-  cursor: pointer;
-}
-
-.login-nav {
-  background-color: var(--main-color);
-  color: #fff;
-  border: none;
-  outline: none;
   cursor: pointer;
 }
 
@@ -179,8 +180,8 @@
 
 .avatar_circle {
   border-radius: 50%;
-  width: 170px;
-  height: 200px;
+  width: 150px;
+  height: 140px;
   object-fit: cover;
 }
 
@@ -220,7 +221,160 @@
   width: 100%;
   background-color: red;
   color: white;
+  border: none;
+  outline: none;
   font-weight: bold;
   padding: 15px;
   cursor: pointer;
+}
+
+.action_category_btn {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100vw;
+}
+
+.editBtn,
+.createCategoryBtn {
+  width: 100%;
+  background-color: var(--second-color);
+  color: white;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.margin_top {
+  display: flex;
+  position: absolute;
+}
+
+.category_name {
+  width: 100%;
+  margin: 5px 0;
+}
+
+.category_input {
+  height: 100vh;
+  justify-content: space-between;
+}
+
+.category_details_page {
+  padding-top: 0;
+}
+
+.added_button {
+  height: 100vh;
+}
+
+.category_details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 10px;
+  margin: 6px 20px 2px 6px;
+}
+
+.category_icon_manage {
+  width: 4vw;
+  height: 10vh;
+  object-fit: cover;
+}
+
+.category_list {
+  padding-top: 0;
+  align-items: normal;
+}
+
+.category_form {
+  padding-top: 0;
+}
+
+.position_bottom {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.outline_border {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: var(--second-color);
+  color: white;
+  border: 1px solid white;
+  font-weight: bold;
+  padding: 16px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.display_flex {
+  display: flex;
+  gap: 10px;
+}
+
+.name_date {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.no_payment {
+  position: fixed;
+  top: 180px;
+  color: var(--second-color);
+  left: 100px;
+}
+
+.Transaction_list {
+  background-color: var(--second-color);
+  color: #fff;
+  height: 100%;
+  width: 98vw;
+  margin: 7px;
+  flex-direction: column;
+}
+
+.successful_payment {
+  padding-top: 0;
+  justify-content: flex-start;
+}
+
+.icon_completed {
+  background-color: #fff;
+  width: 98vw;
+  margin-top: 10px;
+  padding: 35px;
+}
+
+.fa-xl {
+  line-height: 2em;
+  font-size: 8em;
+}
+
+.new_deal {
+  padding-top: 0;
+  justify-content: flex-start;
+}
+
+#deal_category_id {
+  width: 100%;
+  height: 10vh;
+  padding: 5px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+}
+
+#deal_category_id option {
+  display: flex;
+  flex-direction: column;
 }
