@@ -1,10 +1,50 @@
-<p style="color: green"><%= notice %></p>
+<!-- app/views/deals/show.html.erb -->
 
-<%= render @deal %>
-
-<div>
-  <%= link_to "Edit this deal", edit_deal_path(@deal) %> |
-  <%= link_to "Back to deals", deals_path %>
-
-  <%= button_to "Destroy this deal", @deal, method: :delete %>
+<section class="home-section category_details_page">
+  <div>
+    <nav>
+      <%= link_to raw('<i class="fa-solid fa-arrow-left-long"></i>'), categories_path %>
+      <h1>Transaction Details</h1>
+      <i class="fa-solid fa-magnifying-glass fa-shake fa-sm" style="color: #fff;"></i>
+    </nav>
+    <div class="category_details">
+      <% if can? :manage, @category %>
+        <% if @category.icon.attached? %>
+          <div class="display_flex">
+            <%= image_tag @category.icon, class: "category_icon_manage" %>
+          <% else %>
+            <i class="fa-solid fa-2xl fa-circle-user" style="color: #7e7575;"></i>
+          <% end %>
+          <div class="name_date">
+            <%= @category.name.capitalize %>
+            <p><%= @category.created_at.strftime("%d-%m-%y at %l:%M:%S %p") %></p>
+          </div>
+        </div>
+      <p>Total Payment:</p>
+      <p> $<%= @user_deals.sum(:amount) %></p>
+      <% end %>
+    </div>
+  </div>
+  <div class="Transaction_list">
+  <table style="width: 100%; border-collapse: collapse;">
+    <thead>
+      <tr>
+        <th style="border: 1px solid #000; padding: 8px;">Transaction Name</th>
+        <th style="border: 1px solid #000; padding: 8px;">Payment Amount</th>
+        <th style="border: 1px solid #000; padding: 8px;"> Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @user_deals.each do |deal| %>
+        <tr>
+          <td style="border: 1px solid #000; padding: 8px;"><%= deal.name %></td>
+          <td style="border: 1px solid #000; padding: 8px;"><%= deal.amount %></td>
+          <td style="border: 1px solid #000; padding: 8px;"><%= deal.created_at.strftime("%d-%m-%Y %H:%M:%S") %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
+
+
+</section>
