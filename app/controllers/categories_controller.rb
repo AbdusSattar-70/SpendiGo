@@ -16,6 +16,7 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     @total = @category.deals.sum(:amount)
     @deals = @category.deals.order(created_at: :desc)
+    @deal = @deals.first
   end
 
   def new
