@@ -1,5 +1,4 @@
-<!-- app/views/deals/show.html.erb -->
-
+<!-- app/views/deals/index.html.erb -->
 <section class="home-section category_details_page">
   <div>
     <nav>
@@ -32,6 +31,7 @@
         <th style="border: 1px solid #000; padding: 8px;">Transaction Name</th>
         <th style="border: 1px solid #000; padding: 8px;">Payment Amount</th>
         <th style="border: 1px solid #000; padding: 8px;"> Time</th>
+        <th style="border: 1px solid #000; padding: 8px;"> Action</th>
       </tr>
     </thead>
     <tbody>
@@ -40,6 +40,9 @@
           <td style="border: 1px solid #000; padding: 8px;"><%= deal.name %></td>
           <td style="border: 1px solid #000; padding: 8px;"><%= deal.amount %></td>
           <td style="border: 1px solid #000; padding: 8px;"><%= deal.created_at.strftime("%d-%m-%Y %H:%M:%S") %></td>
+          <td style="border: 1px solid #000; padding: 8px;">
+             <%= button_to "Delete", { action: :destroy, id: deal.id }, method: :delete, data: { turbo_method: :delete, confirm: 'Are you sure to delete?' },class:"deleteDeal" %>
+          </td>
         </tr>
       <% end %>
     </tbody>

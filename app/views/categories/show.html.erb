@@ -5,7 +5,7 @@
       <h1>Transaction</h1>
       <i class="fa-solid fa-magnifying-glass fa-shake fa-sm" style="color: #fff;"></i>
     </nav>
-    <%= link_to category_deal_path(@category) do %>
+    <%= link_to category_deals_path(@category) do %>
     <div class="category_details">
       <% if can? :manage, @category %>
         <% if @category.icon.attached? %>
@@ -30,7 +30,11 @@
     <p class="alert"><%= alert %></p>
   </div>
   <div class="action_category_btn">
+  <button  class="createCategoryBtn">
     <%= link_to "Make Payment", new_category_deal_path(@category), class: "outline_border" %>
-    <%= button_to "Destroy this category", category_path(@category), method: :delete, class: "deleteBtn", data: { turbo_method: :delete, turbo_confirm: 'Are you sure to delete?' } %>
+    </button>
+    <span class="createCategoryBtn" >
+    <%= button_to "Destroy this category", category_path(@category), method: :delete, data: { turbo_method: :delete, turbo_confirm: 'Are you sure to delete?'}, class:"outline_border btn_destroy" %>
+    </span>
   </div>
 </section>
