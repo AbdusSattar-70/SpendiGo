@@ -15,6 +15,4 @@ test:
 
 production:
   <<: *default
-  database: SpendiGo_production
-  username: SpendiGo
-  password: <%= ENV["SPENDIGO_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
