@@ -168,7 +168,8 @@ If you like this project, please leave a ⭐️
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank Microverse for providing the reading materials that aided me during the project development and code reviewers who help me to maintain better code.
+- Original design idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella) Thanks to him for making such an amazing design.
+- I would like to thank Microverse for providing the reading materials that aided me during the project development and code reviewers who help me to maintain better code.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
