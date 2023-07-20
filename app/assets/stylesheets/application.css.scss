@@ -1,0 +1,381 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+@import "font-awesome";
+
+:root {
+  --main-color: #3778c2;
+  --second-color: #5fb523;
+  --text-color: #434b54;
+  --bg-color: #dfd9e8f0;
+}
+
+/* .home or splash page style start */
+a {
+  color: var(--text-color);
+}
+
+.notice,
+.alert {
+  background-color: var(--second-color);
+  color: white;
+}
+
+.home-section,
+.devise-login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding-top: 10%;
+}
+
+.splash-home {
+  padding-top: 10%;
+}
+
+.action-div {
+  display: flex;
+  flex-direction: column;
+  width: 96vw;
+}
+
+.login {
+  background-color: var(--main-color);
+  color: white;
+  font-weight: bold;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.signup {
+  font-weight: bold;
+  color: var(--text-color);
+  padding: 20px;
+}
+
+/* home or splash page style end */
+
+/* devise session new or login page style start */
+
+.devise-login-container {
+  padding-top: 0;
+  justify-content: flex-start;
+}
+
+.devise-login-container nav,
+.home-section nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--main-color);
+  color: #fff;
+  width: 100vw;
+  padding: 2%;
+}
+
+.welcome {
+  margin-top: 10%;
+}
+
+.fa-arrow-left-long,
+.fa-bars,
+.fa-xmark {
+  cursor: pointer;
+  color: white;
+}
+
+.input-field-container {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0 0 0;
+  gap: 2px;
+}
+
+.field_with_errors {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0 0 0;
+  gap: 2px;
+}
+
+.input-field-container ::placeholder {
+  padding: 5px;
+  color: var(--text-color);
+}
+
+.input-field-container input {
+  padding: 8px;
+  border: none;
+  outline: none;
+  height: 10vh;
+}
+
+.forgot-password {
+  margin-top: 35px;
+}
+
+/* user photo upload related  */
+.upload-container {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  padding-left: 10px;
+  background-color: #fff;
+}
+
+.user-photo {
+  width: 60%;
+  padding: 0;
+  cursor: pointer;
+}
+
+.user-photo::-webkit-file-upload-button {
+  outline: none;
+  border: none;
+  background-color: white;
+  padding: 10px;
+  color: var(--text-color);
+}
+
+.upload-placeholder {
+  padding-left: 5px;
+}
+
+.current_user {
+  padding-top: 0;
+}
+
+/* mobile menu start */
+.menu_container {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: var(--main-color);
+  color: #fff;
+  transition: left 0.3s ease;
+}
+
+.menu_container.active {
+  left: 0;
+}
+
+.fa-xmark {
+  position: fixed;
+  left: 203px;
+  padding: 10px;
+}
+
+.avatar_circle {
+  border-radius: 50%;
+  width: 150px;
+  height: 140px;
+  object-fit: cover;
+}
+
+.menu_list {
+  padding-top: 25px;
+}
+
+.menu_item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  text-align: left;
+}
+
+.menu_item i {
+  display: inline-block;
+  width: 20px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.menu_item span {
+  width: 210px;
+  display: flex;
+  border-bottom: 1px solid white;
+  padding-bottom: 10px;
+}
+
+.menu_item a {
+  color: #fff;
+}
+
+/* mobile menu end */
+
+/* Edit/Delete user account */
+.deleteBtn {
+  width: 100%;
+  background-color: var(--main-color);
+  color: white;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.action_category_btn {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100vw;
+}
+
+.editBtn,
+.createCategoryBtn {
+  width: 100%;
+  background-color: var(--second-color);
+  color: white;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.category_name {
+  width: 100%;
+  margin: 5px 0;
+}
+
+.category_input {
+  height: 100vh;
+  justify-content: space-between;
+}
+
+.category_details_page {
+  padding-top: 0;
+}
+
+.category_details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 10px;
+  margin: 6px 20px 2px 6px;
+  box-shadow: 4px 4px 6px #12121163;
+}
+
+.category_icon_manage {
+  width: 4vw;
+  height: 10vh;
+  object-fit: cover;
+}
+
+.position_bottom {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.outline_border {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: var(--second-color);
+  color: white;
+  border: 1px solid white;
+  font-weight: bold;
+  padding: 16px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.display_flex {
+  display: flex;
+  gap: 10px;
+}
+
+.name_date {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.Transaction_list {
+  background-color: var(--second-color);
+  color: #fff;
+  height: 100%;
+  width: 98vw;
+  margin: 7px;
+  flex-direction: column;
+}
+
+.successful_payment {
+  padding-top: 0;
+  justify-content: flex-start;
+}
+
+.icon_completed {
+  background-color: #fff;
+  width: 98vw;
+  margin-top: 10px;
+  padding: 35px;
+}
+
+.fa-xl {
+  line-height: 2em;
+  font-size: 8em;
+}
+
+.new_deal {
+  padding-top: 0;
+  justify-content: flex-start;
+}
+
+#deal_category_id {
+  width: 100%;
+  height: 10vh;
+  padding: 5px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+}
+
+#deal_category_id option {
+  display: flex;
+  flex-direction: column;
+}
+
+.deleteDeal {
+  cursor: pointer;
+  background-color: var(--second-color);
+  color: white;
+  outline: none;
+  border: none;
+}
+
+.display_flex_deal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+.btn_destroy {
+  background-color: var(--main-color);
+}

@@ -1,0 +1,40 @@
+<section class="home-section category_details_page">
+  <div>
+    <nav>
+      <%= link_to raw('<i class="fa-solid fa-arrow-left-long"></i>'), categories_path %>
+      <h1>Transaction</h1>
+      <i class="fa-solid fa-magnifying-glass fa-shake fa-sm" style="color: #fff;"></i>
+    </nav>
+    <%= link_to category_deals_path(@category) do %>
+    <div class="category_details">
+      <% if can? :manage, @category %>
+        <% if @category.icon.attached? %>
+          <div class="display_flex">
+            <%= image_tag @category.icon, class: "category_icon_manage" %>
+          <% else %>
+            <i class="fa-solid fa-2xl fa-circle-user" style="color: #7e7575;"></i>
+          <% end %>
+          <div class="name_date">
+            <%= @category.name.capitalize %>
+            <p><%= @category.created_at.strftime("%d-%m-%y at %l:%M:%S %p") %></p>
+            <h3>See Details</h3>
+          </div>
+        </div>
+        <p>Total Payment: $<%= @total %></p>
+      <% end %>
+    </div>
+    <%end%>
+  </div>
+  <div>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+  </div>
+  <div class="action_category_btn">
+  <button  class="createCategoryBtn">
+    <%= link_to "Make Payment", new_category_deal_path(@category), class: "outline_border test_payment" %>
+    </button>
+    <span class="createCategoryBtn" >
+    <%= button_to "Destroy this category", category_path(@category), method: :delete, data: { turbo_method: :delete, turbo_confirm: 'Are you sure to delete?'}, class:"outline_border btn_destroy" %>
+    </span>
+  </div>
+</section>

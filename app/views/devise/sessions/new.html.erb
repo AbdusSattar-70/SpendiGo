@@ -1,0 +1,21 @@
+<section class="devise-login-container">
+  <nav>
+      <%= link_to raw('<i class="fa-solid fa-arrow-left-long"></i>'), root_path %>
+       <h2>LOG IN</h2>
+       <h4>Lon in</h4>
+  </nav>
+  <div>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  </div>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="input-field-container">
+    <%= f.label :email, style:"display:none"  %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder: "Email" %>
+    <%= f.label :password, style:"display:none" %>
+    <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password" %>
+    <%= f.submit "login", style:"display:none" %>
+    <%= link_to  "Forgot password ?", new_user_password_path(current_user), class:"forgot-password"%>
+  </div>
+<% end %>
+<section>

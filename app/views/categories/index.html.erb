@@ -1,0 +1,58 @@
+<section class="home-section category_form">
+  <nav>
+    <i class="fa-solid fa-shake fa-bars menu_toggle" onclick="toggleMenu()"></i>
+    <h1>PAYMENT TYPE</h1>
+    <%= link_to raw('<i class="fa-solid fa-arrow-left-long"></i>'), root_path %>
+  </nav>
+  <div>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+  </div>
+  <%= render "layouts/shared/mobile_nav" %>
+
+  <%= form_with(model: @category, html: { class: "position_bottom" }) do |form| %>
+    <% if @category.errors.any? %>
+      <div style="color: red;">
+        <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
+        <ul>
+          <% @category.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="category_name_icon input-field-container">
+      <div class="user_total_payment category_details">
+        <h3>Sum Of All Transaction: </h3>
+        <h3> $<%= @total_payment%></h3>
+      </div>
+        <% @categories.each do |category| %>
+          <% if can? :manage, category %>
+            <%= link_to category do %>
+              <div class="category_details">
+                <% if category.icon.attached? %>
+                  <div class="display_flex">
+                    <%= image_tag category.icon, class: "category_icon_manage" %>
+                  <% else %>
+                    <i class="fa-solid fa-2xl fa-circle-user" style="color: #7e7575;"></i>
+                  <% end %>
+                  <div class="name_date">
+                    <%= category.name.capitalize %>
+                    <p><%= category.created_at.strftime("%d %b %Y") %></p>
+                  </div>
+                </div>
+                <p>Total Payment: $<%= @category_totals[category.id] %></p>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
+        <% if current_user.categories.empty? %>
+         <h2>You haven't added any Payment Type yet!</h2>
+       <% end %>
+    </div>
+    <button class="createCategoryBtn" type="submit">
+      <%= link_to "Add Payment", new_category_path, class: "outline_border" %>
+    </button>
+  <% end %>
+</section>

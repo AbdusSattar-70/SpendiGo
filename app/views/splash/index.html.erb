@@ -1,0 +1,26 @@
+<section class='home-section current_user'>
+  <% if current_user  %>
+     <nav>
+    <p class="menu_test"> <i class="fa-solid fa-shake fa-bars menu_toggle" onclick="toggleMenu()"></i></p>
+        <h1>HOME</h1>
+        <i class="fa-solid fa-magnifying-glass fa-shake fa-sm" style="color: #fff;"></i>
+      </nav>
+     <div>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+  </div>
+     <%= render "layouts/shared/mobile_nav" %>
+  <h1 class="welcome">Welcome, <span><%= current_user.name %>!</span><h1>
+<% else  %>
+        <div class='splash-home'>
+            <h1>Wecome To SpendiGo!<h1>
+            <p>Track Your Spending Smartly</p>
+            <%= image_tag('logo.png', width: '170px', height: '200px') %>
+            <p>SpendiGo</p>
+        </div>
+         <div class="action-div">
+           <%= link_to "LOG IN", new_user_session_path, class:"login"%>
+           <%= link_to "SIGN UP", new_user_registration_path, class:"signup"%>
+          </div>
+     <% end %>
+</section>

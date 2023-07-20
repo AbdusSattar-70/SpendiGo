@@ -1,0 +1,42 @@
+  <section class="home-section new_deal">
+  <div class="display_flex_deal">
+    <nav>
+     <i class="fa-solid fa-shake fa-bars menu_toggle" onclick="toggleMenu()"></i>
+        <h1>CREATE PAYMENT</h1>
+      <%= link_to raw('<i class="fa-solid fa-arrow-left-long"></i>'), categories_path %>
+    </nav
+     <div>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+     </div>
+     <%= render "layouts/shared/mobile_nav" %>
+      <%= form_with model: @deal, url: category_deals_path(params[:category_id]), method: :post, local: true do |form| %>
+      <%= form.hidden_field :category_id, value: params[:category_id] %>
+
+  <% if @deal.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(@deal.errors.count, "error") %> prohibited this deal from being saved:</h2>
+      <ul>
+        <% @deal.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="display_flex_deal">
+  <div class="input-field-container">
+    <%= form.hidden_field :author_id, value: current_user.id %>
+    <% form.label :category_id %>
+    <%= form.collection_select :category_id, current_user.categories, :id, :name, prompt: "Select a category" %>
+    <%= form.label :name, style: "display: none" %>
+    <%= form.text_field :name, require: true, placeholder: "Enter Payment Name" %>
+    <%= form.label :amount, style: "display: none" %>
+    <%= form.text_field :amount, require: true, placeholder: "Amount" %>
+  </div>
+    <button  class="createCategoryBtn">
+   <%= form.submit "Confirm Payment", class:"outline_border"%>
+   </button>
+   </div>
+   </div>
+<% end %>
+</section>

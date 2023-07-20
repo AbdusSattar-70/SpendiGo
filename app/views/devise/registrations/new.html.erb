@@ -1,0 +1,31 @@
+<section class="devise-login-container">
+  <nav>
+      <%= link_to raw('<i class="fa-solid fa-arrow-left-long"></i>'), root_path %>
+       <h2>REGISTER</h2>
+       <h4> Next</h4>
+  </nav>
+  <div>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  </div>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <div class="input-field-container">
+     <div class="upload-container">
+       <i class="fa-solid fa-2xl fa-circle-user" style="color: #7e7575;"></i>
+        <span class="upload-placeholder">Upload Picture</span>
+       <%= f.file_field :photo, accept: "image/*", class:"user-photo" %>
+     </div>
+    <%= f.label :name, style:"display:none"%>
+    <%= f.text_field :name, autofocus: true, placeholder:'Name' %>
+    <%= f.label :email, style:"display:none" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder:'Email' %>
+    <%= f.label :password, style:"display:none"%>
+    <%= f.password_field :password, autocomplete: "new-password",placeholder:"New Password" %>
+    <%= f.label :password_confirmation, style:"display:none"%>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password",placeholder:"Password Confirmation" %>
+    <%= f.submit "Sign up",style:"display:none"%>
+  </div>
+<% end %>
+<section>
+

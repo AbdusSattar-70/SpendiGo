@@ -1,0 +1,36 @@
+<section class="devise-login-container">
+    <nav>
+       <%= link_to raw('<i class="fa-solid fa-arrow-left-long"></i>'), root_path %>
+       <h2>Edit <%= resource_name.to_s.humanize %></h2>
+    </nav>
+    <div>
+      <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+     </div>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+ <div class="input-field-container">
+     <div class="upload-container">
+       <i class="fa-solid fa-2xl fa-circle-user" style="color: #7e7575;"></i>
+        <span class="upload-placeholder">Upload Picture</span>
+       <%= f.file_field :photo, accept: "image/*", class:"user-photo" %>
+     </div>
+    <%= f.label :name, style:"display:none"%>
+    <%= f.text_field :name, autofocus: true, placeholder:'Name' %>
+    <%= f.label :email, style:"display:none" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder:'Email' %>
+    <%= f.label :current_password, style:"display:none"%>
+    <%= f.password_field :current_password, autocomplete: "current-password",placeholder:"Current Password" %>
+    <%= f.label :password, style:"display:none"%>
+    <%= f.password_field :password, autocomplete: "new-password",placeholder:"New Password" %>
+    <%= f.label :password_confirmation, style:"display:none"%>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password",placeholder:"Password Confirmation" %>
+    <%= f.submit "Update",class:"updateBtn"%>
+    <%= button_to "Delete Account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, class:"deleteBtn" %>
+  </div>
+<% end %>
+</section>

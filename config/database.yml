@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: sattar
+  password: sattar
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: SpendiGo_development
+
+test:
+  <<: *default
+  database: SpendiGo_test
+
+production:
+  <<: *default
+  url: <%= ENV['DATABASE_URL'] %>

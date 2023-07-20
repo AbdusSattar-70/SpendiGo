@@ -1,0 +1,20 @@
+ <section class="forgot-password-section devise-login-container">
+ <nav>
+      <%= link_to raw('<i class="fa-solid fa-arrow-left-long"></i>'), root_path %>
+       <h2>LOG IN</h2>
+       <h4>Log in</h4>
+  </nav>
+  <div>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  </div>
+   <h2>Forgot your password?</h2>
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+   <div class="input-field-container">
+    <%= f.label :email, style:"display:none" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder:"Email" %>
+    <%= f.submit "Send me reset password instructions",class:"login" %>
+   </div>
+<% end %>
+ </section>
