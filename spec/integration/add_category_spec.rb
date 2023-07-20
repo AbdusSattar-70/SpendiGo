@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
 RSpec.feature 'User Profile Update', type: :feature do
@@ -23,8 +21,8 @@ RSpec.feature 'User Profile Update', type: :feature do
   end
 
   scenario 'User can toggle mobile menu & update profile with valid information' do
-    backBtn = find('p.backBtn_test')
-    backBtn.click
+    back_Btn = find('p.backBtn_test')
+    back_Btn.click
     hum_menu = find('p.menu_test', wait: 10)
     hum_menu.click
     sleep 2

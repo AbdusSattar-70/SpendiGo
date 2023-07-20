@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
 RSpec.describe 'Categories', type: :feature do
@@ -41,16 +39,16 @@ RSpec.describe 'Categories', type: :feature do
     fill_in 'Amount', with: '100.00'
     click_button 'Confirm Payment'
     sleep 3
-    testBtn = find('.testBtn1')
-    testBtn.click
+    test_Btn = find('.testBtn1')
+    test_Btn.click
     sleep 5
     expect(page).to have_content('Total Payment:')
     expect(page).to have_content('Payment Amount')
     expect(page).to have_content('Time')
     expect(page).to have_content('Test_Transaction')
     expect(page).to have_content('Transaction Name')
-    testBtn2 = find('.testBtn2')
-    testBtn2.click
+    test_Btn2 = find('.testBtn2')
+    test_Btn2.click
     sleep 3
     backBtn_test = find('.backBtn_test')
     backBtn_test.click
