@@ -147,8 +147,11 @@ a {
 }
 
 .user-photo::-webkit-file-upload-button {
-  visibility: hidden;
+  outline: none;
+  border: none;
+  background-color: white;
   padding: 10px;
+  color: var(--text-color);
 }
 
 .upload-placeholder {

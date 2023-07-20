@@ -31,7 +31,7 @@
   </div>
   <div class="action_category_btn">
   <button  class="createCategoryBtn">
-    <%= link_to "Make Payment", new_category_deal_path(@category), class: "outline_border" %>
+    <%= link_to "Make Payment", new_category_deal_path(@category), class: "outline_border test_payment" %>
     </button>
     <span class="createCategoryBtn" >
     <%= button_to "Destroy this category", category_path(@category), method: :delete, data: { turbo_method: :delete, turbo_confirm: 'Are you sure to delete?'}, class:"outline_border btn_destroy" %>
