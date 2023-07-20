@@ -144,6 +144,10 @@ rails s
 
 [See Live on render](https://spendigo.onrender.com/)
 
+## 🚀 Video Presentation <a name="live-demo"></a>
+
+[Video Presentation](https://www.loom.com/share/44a787b5614a4b41b9e6337c8ccdee2e?sid=8ca4b59b-f245-4022-bfb8-94373aec01e1)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
