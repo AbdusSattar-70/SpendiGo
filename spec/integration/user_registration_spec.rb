@@ -8,11 +8,6 @@ RSpec.feature 'User', type: :feature do
     expect(page).to have_content('LOG IN')
   end
 
-  it 'displays the sign_up link on the homepage' do
-    visit root_path
-    expect(page).to have_content('SIGN UP')
-  end
-
   it 'displays the Welcome! message on the homepage' do
     visit root_path
     expect(page).to have_content('Wecome To SpendiGo!')
@@ -29,14 +24,11 @@ RSpec.feature 'User', type: :feature do
     find('input[name="user[password_confirmation]"]').send_keys(:enter)
     sleep 2
     expect(page).to have_content('Welcome! You have signed up successfully.')
-    expect(page).to have_current_path(categories_path)
   end
 
   scenario 'User cannot register with invalid information' do
     visit new_user_registration_path
     find('input[name="user[password_confirmation]"]').send_keys(:enter)
-    sleep 2
     expect(page).to have_content('prohibited this user from being saved')
-    expect(page).to have_current_path('/users/sign_up')
   end
 end

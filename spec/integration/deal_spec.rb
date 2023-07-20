@@ -47,8 +47,8 @@ RSpec.describe 'Categories', type: :feature do
     expect(page).to have_content('Time')
     expect(page).to have_content('Test_Transaction')
     expect(page).to have_content('Transaction Name')
-    test_btn_2 = find('.testBtn2')
-    test_btn_2.click
+    test_btn_two = find('.testBtn2')
+    test_btn_two.click
     sleep 3
     back_btn_test = find('.backBtn_test')
     back_btn_test.click

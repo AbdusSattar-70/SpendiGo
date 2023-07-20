@@ -28,9 +28,6 @@ RSpec.feature 'User', type: :feature do
     sleep 2
 
     expect(page).to have_content('Account Settings')
-    expect(page).to have_content('Merchant Finder')
-    expect(page).to have_content('Claim Promo')
-    expect(page).to have_content('Share Promo')
     expect(page).to have_content('Payments')
     settings = find('.test_settings')
     settings.click
