@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'User Profile Update', type: :feature do
+RSpec.feature 'User', type: :feature do
   include Devise::Test::IntegrationHelpers
   before do
     visit root_path
@@ -14,15 +14,15 @@ RSpec.feature 'User Profile Update', type: :feature do
   end
 
   scenario 'User can back to the home page' do
-    backBtn = find('p.backBtn_test')
-    backBtn.click
+    back_btn = find('p.backBtn_test')
+    back_btn.click
     expect(page).to have_content('Welcome,')
     expect(page).to have_content('HOME')
   end
 
   scenario 'User can toggle mobile menu & update profile with valid information' do
-    back_Btn = find('p.backBtn_test')
-    back_Btn.click
+    back_btn = find('p.backBtn_test')
+    back_btn.click
     hum_menu = find('p.menu_test', wait: 10)
     hum_menu.click
 

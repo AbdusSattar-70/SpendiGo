@@ -20,8 +20,8 @@ RSpec.describe 'Categories', type: :feature do
   it 'redirects to Transaction details path to make payment' do
     category_details = find('.name_date')
     category_details.click
-    make_paymentBtn = find('.test_payment')
-    make_paymentBtn.click
+    make_payment_btn = find('.test_payment')
+    make_payment_btn.click
     select 'test_payment', from: 'deal[category_id]'
     fill_in 'Enter Payment Name', with: 'Test_Transaction'
     fill_in 'Amount', with: '100.00'
@@ -32,26 +32,26 @@ RSpec.describe 'Categories', type: :feature do
   it 'redirects to Transaction details path to details' do
     category_details = find('.name_date')
     category_details.click
-    make_paymentBtn = find('.test_payment')
-    make_paymentBtn.click
+    make_payment_btn = find('.test_payment')
+    make_payment_btn.click
     select 'test_payment', from: 'deal[category_id]'
     fill_in 'Enter Payment Name', with: 'Test_Transaction'
     fill_in 'Amount', with: '100.00'
     click_button 'Confirm Payment'
     sleep 3
-    test_Btn = find('.testBtn1')
-    test_Btn.click
+    test_btn = find('.testBtn1')
+    test_btn.click
     sleep 5
     expect(page).to have_content('Total Payment:')
     expect(page).to have_content('Payment Amount')
     expect(page).to have_content('Time')
     expect(page).to have_content('Test_Transaction')
     expect(page).to have_content('Transaction Name')
-    test_Btn2 = find('.testBtn2')
-    test_Btn2.click
+    test_btn_2 = find('.testBtn2')
+    test_btn_2.click
     sleep 3
-    backBtn_test = find('.backBtn_test')
-    backBtn_test.click
+    back_btn_test = find('.backBtn_test')
+    back_btn_test.click
     sleep 2
     hum_menu = find('p.menu_test', wait: 10)
     hum_menu.click

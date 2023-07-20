@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'User Registration', type: :feature do
+RSpec.feature 'User', type: :feature do
   include Devise::Test::IntegrationHelpers
 
   it 'displays the login link on the homepage' do
