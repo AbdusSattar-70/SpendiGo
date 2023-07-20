@@ -2,6 +2,9 @@ class CategoriesController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    @category_list = Category.all
+    @category = Category.new
+
     @categories = current_user.categories
     @category_totals = {}
 
