@@ -2,8 +2,12 @@ require 'rails_helper'
 
 RSpec.describe Deal, type: :model do
   let(:user) { User.create(name: 'John Doe') }
-  let(:category1) { Category.create(name: 'Category 1', icon: fixture_file_upload('sample.png', 'image/png'), author: user) }
-  let(:category2) { Category.create(name: 'Category 2', icon: fixture_file_upload('sample.png', 'image/png'), author: user) }
+  let(:category1) do
+    Category.create(name: 'Category 1', icon: fixture_file_upload('sample.png', 'image/png'), author: user)
+  end
+  let(:category2) do
+    Category.create(name: 'Category 2', icon: fixture_file_upload('sample.png', 'image/png'), author: user)
+  end
 
   subject do
     Deal.new(name: 'Deal 1', amount: 100, author: user)
