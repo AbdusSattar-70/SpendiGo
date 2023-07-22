@@ -100,6 +100,14 @@ a {
   color: white;
 }
 
+.next_button {
+  background-color: var(--main-color);
+  color: white;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
 .input-field-container {
   width: 100vw;
   display: flex;
@@ -253,6 +261,10 @@ a {
   cursor: pointer;
 }
 
+.category_form {
+  padding-top: 0;
+}
+
 .category_name {
   width: 100%;
   margin: 5px 0;
@@ -272,14 +284,14 @@ a {
   align-items: center;
   justify-content: space-between;
   background-color: white;
-  padding: 10px;
-  margin: 6px 20px 2px 6px;
+  padding: 18px;
+  margin: 6px 14px 6px 14px;
   box-shadow: 4px 4px 6px #12121163;
 }
 
 .category_icon_manage {
+  height: 4vh;
   width: 4vw;
-  height: 10vh;
   object-fit: cover;
 }
 
@@ -307,6 +319,7 @@ a {
 .display_flex {
   display: flex;
   gap: 10px;
+  align-items: center;
 }
 
 .name_date {
