@@ -14,7 +14,7 @@
      <div class="upload-container">
        <i class="fa-solid fa-2xl fa-circle-user" style="color: #7e7575;"></i>
         <span class="upload-placeholder">Upload Picture</span>
-       <%= f.file_field :photo, accept: "image/*", class:"user-photo" %>
+       <%= f.file_field :photo, class:"user-photo" %>
      </div>
     <%= f.label :name, style:"display:none"%>
     <%= f.text_field :name, autofocus: true, placeholder:'Name' %>
