@@ -2,9 +2,7 @@
   <nav>
       <%= link_to raw('<i class="fa-solid fa-arrow-left-long"></i>'), root_path %>
        <h2>REGISTER</h2>
-       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-       <%= f.submit "Next", class:"login-nav" %>
-      <% end %>
+       <h4> Next</h4>
   </nav>
   <div>
   <p class="notice"><%= notice %></p>
@@ -26,7 +24,7 @@
     <%= f.password_field :password, autocomplete: "new-password",placeholder:"New Password" %>
     <%= f.label :password_confirmation, style:"display:none"%>
     <%= f.password_field :password_confirmation, autocomplete: "new-password",placeholder:"Password Confirmation" %>
-    <%= f.submit "Sign up", style:"display:none"%>
+    <%= f.submit "Sign up",style:"display:none"%>
   </div>
 <% end %>
 <section>
